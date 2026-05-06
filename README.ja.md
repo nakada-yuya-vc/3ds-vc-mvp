@@ -10,12 +10,12 @@
 
 EMV 3DS v2.x では、加盟店が `threeDSRequestorAuthenticationInfo` を通じて認証コンテキストを渡せますが、カード会員の属性情報（氏名・住所・生年月日等）は**申告値であり、暗号学的な保証がありません**。イシュアはそれらの真正性を確認する手段を持っていません。
 
-本プロトタイプは、カード発行銀行が署名した **W3C Verifiable Presentation（VP Token）** を `threeDSReqAuthData` フィールドに直接埋め込むことを提案します。ACS はイシュア自身が運営するため、外部の Trust Registry なしに自身の発行したクレデンシャルを検証できます。
+本プロトタイプは、イシュアが署名した **W3C Verifiable Presentation（VP Token）** を `threeDSReqAuthData` フィールドに直接埋め込むことを提案します。ACS はイシュア自身が運営するため、外部の Trust Registry なしに自身の発行したクレデンシャルを検証できます。
 
 ## 提案アーキテクチャ
 
 ```
-[Mock Issuer（銀行）]
+[Mock Issuer（イシュア）]
      │  SD-JWT-VC を発行（住所・氏名・生年月日・年齢）
      ▼
 [Mock Wallet（カード会員）]
@@ -36,7 +36,7 @@ EMV 3DS v2.x では、加盟店が `threeDSRequestorAuthenticationInfo` を通�
 
 ### 設計の核心：イシュア = ACS の循環信頼モデル
 
-ACS はクレデンシャルを発行した銀行自身が運営します。そのため、**外部の Trust Registry を参照せず、自身の公開鍵だけで VC を検証**できます。この自己完結した信頼モデルが、PoC を現実的に実装できる最大の簡略化要因であり、同時にイシュアが 3DS に参加する最強の動機付けになります。
+ACS はクレデンシャルを発行したイシュア自身が運営します。そのため、**外部の Trust Registry を参照せず、自身の公開鍵だけで VC を検証**できます。この自己完結した信頼モデルが、PoC を現実的に実装できる最大の簡略化要因であり、同時にイシュアが 3DS に参加する最強の動機付けになります。
 
 ## クイックスタート
 
@@ -144,7 +144,7 @@ EMVCo ホワイトペーパー Chapter 5（Open Items）への対応:
 
 | オープン課題 | 本 PoC のアプローチ |
 |-------------|-------------------|
-| カード会員属性の真正性検証 | 銀行が発行した VC、ACS が自身のクレデンシャルを検証 |
+| カード会員属性の真正性検証 | イシュアが発行した VC、ACS が自身のクレデンシャルを検証 |
 | 最小限の情報開示 | SD-JWT Selective Disclosure（郵便番号/住所のみ） |
 | リプレイ攻撃防止 | Key Binding JWT の `nonce` = `threeDSServerTransID` |
 | トラストアンカー | 自己発行モデル（Issuer = ACS）、外部 Trust Registry 不要 |
