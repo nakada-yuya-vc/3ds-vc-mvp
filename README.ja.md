@@ -152,7 +152,7 @@ EMVCo ホワイトペーパー Chapter 5（Open Items）への対応:
 ## 既知の制限・今後の課題
 
 - **DS 中継**: 本 PoC は Directory Server をスキップ。実運用では DS を経由した VP Token 転送プロトコルが必要。
-- **Trust Registry**: 自己発行モデルは Issuer = ACS の場合のみ機能。他行発行クレデンシャルへの対応には Trust Registry（EBSI、X.509 PKI 拡張等）が必要。
+- **Trust Registry**: 自己発行モデルは Issuer = ACS の場合のみ機能。他組織発行クレデンシャルへの対応には Trust Registry（EBSI、X.509 PKI 拡張等）が必要。
 - **iframe / UAL**: ブラウザ文脈でのウォレット操作には UX レイヤー（OID4VP リダイレクト、ブラウザウォレット API 等）が必要。
 - **クレデンシャル形式**: `dc+sd-jwt` のみ実装。`iso-mdoc`（mDL）は対象外。
 - **AReq 全フィールド**: VP Token 関連フィールドのみモデル化。EMVCo 仕様の全フィールドは対象外。
