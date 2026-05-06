@@ -1,0 +1,29 @@
+{
+  "name": "@3ds-vc-mvp/wallet",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@3ds-vc-mvp/shared": "workspace:*",
+    "@sd-jwt/core": "0.19.0",
+    "@sd-jwt/crypto-nodejs": "0.19.0",
+    "@sd-jwt/decode": "0.19.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "tsx": "^4.7.0",
+    "@types/node": "^20.0.0"
+  }
+}

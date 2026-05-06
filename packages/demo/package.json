@@ -1,0 +1,21 @@
+{
+  "name": "@3ds-vc-mvp/demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@3ds-vc-mvp/shared": "workspace:*",
+    "@3ds-vc-mvp/issuer": "workspace:*",
+    "@3ds-vc-mvp/wallet": "workspace:*",
+    "@3ds-vc-mvp/acs": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "tsx": "^4.7.0",
+    "@types/node": "^20.0.0"
+  }
+}
