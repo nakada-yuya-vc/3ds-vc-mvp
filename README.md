@@ -44,7 +44,7 @@ The ACS is operated by the issuing bank — the same entity that issued the VC. 
 # Prerequisites: Node.js 20+, pnpm
 npm install -g pnpm
 
-git clone https://github.com/<your-org>/3ds-vc-mvp.git
+git clone https://github.com/nakada-yuya-vc/3ds-vc-mvp.git
 cd 3ds-vc-mvp
 pnpm install
 pnpm demo
