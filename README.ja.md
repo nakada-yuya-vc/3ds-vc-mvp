@@ -44,7 +44,7 @@ ACS はクレデンシャルを発行した銀行自身が運営します。そ�
 # 前提: Node.js 20+, pnpm
 npm install -g pnpm
 
-git clone https://github.com/<your-org>/3ds-vc-mvp.git
+git clone https://github.com/nakada-yuya-vc/3ds-vc-mvp.git
 cd 3ds-vc-mvp
 pnpm install
 pnpm demo
